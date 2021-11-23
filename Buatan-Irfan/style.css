@@ -1,0 +1,62 @@
+#header {
+    background-image: url(Gallery/Judul.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#header .navbar-brand img {
+    width: 200px;
+}
+
+.nav-link {
+    font-size: 24px;
+    padding-top: 15px;
+    margin: 2rem;
+}
+
+.nav-link:hover {
+    transform: translateY(-8px);
+    transition: .3s;
+}
+
+.Logo img {
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.Logo .img:hover {
+    transform: scale(1.2);
+}
+
+#navbarNav {
+    font-family: 'poppins', sans-serif;
+}
+
+#landingpage {
+    margin-top: 15%;
+    font-family: 'Courgette', cursive;
+    -webkit-text-stroke: 0.2em #519872;
+}
+
+#part-2 {
+    background-image: url(Gallery/Backgrounf.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.gambar {
+    width: 7rem;
+}
+
+.deskripsi {
+    margin-left: 5rem;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(Fonts/Poppins-Medium.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
