@@ -4,10 +4,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('User') ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <img src="<?= base_url('') ?>admin_assets/img/grissee.png" alt="" class="w-75 mx-auto d-block">
     </a>
 
     <!-- Divider -->

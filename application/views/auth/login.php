@@ -15,7 +15,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
                                 </div>
 
-                                <?= $this->session->flashdata('message'); ?>
+                                <?= $this->session->flashdata('Pemberitahuan'); ?>
 
                                 <form class="user" method="POST" action="<?= base_url('auth'); ?>">
                                     <div class="form-group">

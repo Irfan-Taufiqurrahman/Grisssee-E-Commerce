@@ -11,6 +11,10 @@ class auth extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
+
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
@@ -49,15 +53,15 @@ class auth extends CI_Controller
                         redirect('Admin/page');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+                    $this->session->set_flashdata('Pemberitahuan', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This Email has not activated!</div>');
+                $this->session->set_flashdata('Pemberitahuan', '<div class="alert alert-danger" role="alert">This Email has not activated!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            $this->session->set_flashdata('Pemberitahuan', '<div class="alert alert-danger" role="alert">
             Email not registered!</div>');
             redirect('auth');
         }
@@ -65,6 +69,10 @@ class auth extends CI_Controller
 
     public function registration()
     {
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
+
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
@@ -93,8 +101,7 @@ class auth extends CI_Controller
             ];
 
             $this->db->insert('user', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Congratulation! your account has been created. Please Login!</div>');
+            $this->session->set_flashdata('Pemberitahuan', '<div class="alert alert-success" role="alert">Congratulation! your account has been created. Please Login!</div>');
             redirect('auth');
         }
     }
@@ -104,7 +111,12 @@ class auth extends CI_Controller
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
+        $this->session->set_flashdata('Pemberitahuan', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
         redirect('auth');
+    }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
     }
 }

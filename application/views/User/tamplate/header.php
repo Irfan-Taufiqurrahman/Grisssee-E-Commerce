@@ -14,8 +14,8 @@
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('') ?>admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url('') ?>admin_assets/https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
-    <link href="<?= base_url('') ?>admin_assets/https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 
 
     <!-- Custom styles for this template-->

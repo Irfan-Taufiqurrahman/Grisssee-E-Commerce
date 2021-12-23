@@ -6,13 +6,13 @@ class Page extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in();
         $this->load->model('CRUD');
         $this->load->model('Admin/M_Barang');
     }
 
     public function index()
     {
-
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Grissee - admin';
         $this->load->view('Admin/index', $data);
@@ -104,6 +104,15 @@ class Page extends CI_Controller
         $where = array('product_id' => $product_id);
         $this->M_Barang->hapusBarang($where, 'barang');
         redirect('Admin/Page/barang', 'refresh');
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
+        redirect('auth');
     }
 }
 

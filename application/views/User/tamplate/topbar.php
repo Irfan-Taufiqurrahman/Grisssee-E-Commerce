@@ -56,6 +56,7 @@
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['name']; ?></span>
                         <img class="img-profile rounded-circle" src="<?= base_url('admin_assets/img/') . $user['image']; ?>">
                     </a>
+
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="<?= base_url('User/profile') ?>">
